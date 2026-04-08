@@ -76,7 +76,7 @@ def ensure_jenkins():
                 "bind": "/var/run/docker.sock",
                 "mode": "rw"
             },
-            "/home/ubuntu/jenkins_home": {   # 🔥 IMPORTANT FIX
+            "/home/ubuntu/jenkins_home": {   
                 "bind": "/var/jenkins_home",
                 "mode": "rw"
             }
