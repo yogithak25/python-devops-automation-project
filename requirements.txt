@@ -1,0 +1,6 @@
+docker
+requests
+python-dotenv
+kubernetes
+pyyaml
+gitpython
