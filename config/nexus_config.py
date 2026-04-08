@@ -76,7 +76,7 @@ def is_password_changed():
 # -----------------------------
 def change_password(initial_pwd):
     if is_password_changed():
-        print("✅ Nexus password already updated (idempotent)")
+        print("✅ Nexus password already updated")
         return
 
     if not initial_pwd:
@@ -120,7 +120,7 @@ def create_maven_repo():
     repo_name = "maven-releases-custom"
 
     if repo_exists(repo_name):
-        print("✅ Maven repo already exists (idempotent)")
+        print("✅ Maven repo already exists")
         return repo_name
 
     print("\n📦 Creating Maven hosted repository...\n")

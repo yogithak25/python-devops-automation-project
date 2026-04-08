@@ -6,7 +6,7 @@ from kubernetes import client, config as k8s_config, utils
 from config.env_loader import get_env
 
 # -----------------------------
-# LOAD ENV (YOUR FORMAT)
+# LOAD ENV
 # -----------------------------
 config = get_env()
 EC2_IP_PUB = config['EC2_IP']
@@ -102,13 +102,13 @@ def install_argocd():
 
     except Exception as e:
         if "AlreadyExists" in str(e):
-            print("✅ ArgoCD already installed (idempotent)")
+            print("✅ ArgoCD already installed")
         else:
             raise e
 
 
 # -----------------------------
-# PATCH SERVICE (IDEMPOTENT)
+# PATCH SERVICE
 # -----------------------------
 def patch_service():
     print("\n🔧 Ensuring NodePort service...\n")
@@ -122,7 +122,7 @@ def patch_service():
         svc.spec.type == "NodePort"
         and svc.spec.ports[0].node_port == NODEPORT
     ):
-        print("✅ Service already configured (idempotent)")
+        print("✅ Service already configured")
         return
 
     svc.spec.type = "NodePort"
@@ -210,16 +210,8 @@ def setup_argocd():
     # Patch service
     patch_service()
 
-    # Password
-    password = get_initial_password()
 
     print("\n🌐 Access ArgoCD UI:")
     print(f"http://{EC2_IP_PUB}:{NODEPORT}")
-    print("Username: admin")
-
-    if password:
-        print(f"Password: {password}")
-    else:
-        print("Password: Not ready yet, run again")
 
     print("\n✅ ArgoCD READY\n")

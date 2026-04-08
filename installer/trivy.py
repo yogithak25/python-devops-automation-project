@@ -14,7 +14,7 @@ def trivy_image_exists():
 
 
 # -----------------------------
-# PULL TRIVY IMAGE (IDEMPOTENT)
+# PULL TRIVY IMAGE
 # -----------------------------
 def setup_trivy():
 

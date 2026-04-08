@@ -102,7 +102,6 @@ def ensure_jenkins_password():
         crumb["crumbRequestField"]: crumb["crumb"]
     })
 
-    # 🔥 FINAL FIX SCRIPT
     script = f"""
 import jenkins.model.*
 import hudson.security.*
@@ -286,7 +285,7 @@ def generate_token():
         raise Exception("❌ Initial password not found")
 
     # -----------------------------
-    # 🔥 USE SESSION (CRITICAL FIX)
+    # 🔥 USE SESSION 
     # -----------------------------
     session = requests.Session()
     session.auth = (config["JENKINS_USER"], initial_pwd)
@@ -499,7 +498,7 @@ def ensure_sonar_token_credential():
         crumb["crumbRequestField"]: crumb["crumb"]
     }
 
-    # ✅ Check existence (idempotent)
+    # ✅ Check existence
     if credential_exists("sonar-token"):
         print("✅ sonar-token credential already exists")
         return
@@ -509,7 +508,7 @@ def ensure_sonar_token_credential():
         "credentials": {
             "scope": "GLOBAL",
             "id": "sonar-token",
-            "secret": config["SONAR_TOKEN"],  # from env.txt
+            "secret": config["SONAR_TOKEN"],  
             "description": "Sonar Token",
             "$class": "org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl"
         }
@@ -592,7 +591,7 @@ if (existingMaven == null) {
 
 
 // ==========================
-// SONAR SCANNER CONFIG (IDEMPOTENT)
+// SONAR SCANNER CONFIG 
 // ==========================
 def sonarDesc = jenkins.getDescriptorByType(SonarRunnerInstallation.DescriptorImpl)
 

@@ -7,7 +7,7 @@ BASE_API = "https://api.github.com"
 
 
 # -----------------------------
-# COMMON HEADERS
+# COMMON HEADERS  
 # -----------------------------
 def headers():
     return {

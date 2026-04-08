@@ -49,7 +49,7 @@ def create_cluster():
         detach=True,
         ports={
             "6443/tcp": 6443,     # Kubernetes API
-            "32578/tcp": 32578, # ArgoCD UI (IMPORTANT)
+            "32578/tcp": 32578, # ArgoCD UI
             "30007/tcp": 30007,
             "30008/tcp": 30008,
         },
@@ -110,7 +110,7 @@ def wait_for_ready():
 
 
 # -----------------------------
-# VALIDATE PORT MAPPING (IDEMPOTENT)
+# VALIDATE PORT MAPPING
 # -----------------------------
 def ports_correct():
     container = get_container()

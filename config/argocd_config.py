@@ -39,7 +39,7 @@ def wait_for_argocd(url):
 
 
 # -----------------------------
-# GET INITIAL PASSWORD (NO SHELL)
+# GET INITIAL PASSWORD
 # -----------------------------
 def get_initial_password():
 
@@ -83,7 +83,7 @@ def login(url, password):
 
 
 # -----------------------------
-# ENSURE PASSWORD (IDEMPOTENT)
+# ENSURE PASSWORD 
 # -----------------------------
 def ensure_password(url):
 

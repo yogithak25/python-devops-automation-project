@@ -31,7 +31,7 @@ def wait_for_sonar():
 
 
 # -----------------------------
-# AUTH HANDLER (IDEMPOTENT)
+# AUTH HANDLER 
 # -----------------------------
 def get_auth():
     try:
@@ -126,7 +126,7 @@ def is_token_valid(token):
 
 
 # -----------------------------
-# GENERATE TOKEN (IDEMPOTENT)
+# GENERATE TOKEN 
 # -----------------------------
 def generate_token():
     print("\n🔑 Checking/Generating token...\n")
@@ -158,7 +158,7 @@ def generate_token():
 
 
 # -----------------------------
-# CREATE PROJECT (IDEMPOTENT)
+# CREATE PROJECT
 # -----------------------------
 def create_project(project_key, project_name):
 
@@ -277,7 +277,7 @@ def assign_quality_gate(project_key, gate_name):
 
 
 # -----------------------------
-# WEBHOOK (IDEMPOTENT)
+# WEBHOOK 
 # -----------------------------
 def add_webhook():
 

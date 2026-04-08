@@ -5,7 +5,7 @@ config = get_env()
 
 
 # -----------------------------
-# SESSION (BEST PRACTICE)
+# SESSION
 # -----------------------------
 def get_session():
     session = requests.Session()

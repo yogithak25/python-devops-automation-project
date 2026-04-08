@@ -38,8 +38,6 @@ def main():
     # =====================================================
     print("\n⚙️ PHASE 2: CONFIGURATION\n")
 
-    # 🔥 IMPORTANT ORDER (DO NOT CHANGE)
-
     # 1️⃣ SonarQube → generates token
     from config.sonarqube_config import setup_sonarqube
     setup_sonarqube()

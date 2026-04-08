@@ -35,7 +35,7 @@ def wait_for_service(port, name):
 
 
 # -----------------------------
-# JENKINS (SPECIAL SETUP)
+# JENKINS 
 # -----------------------------
 def ensure_jenkins():
 

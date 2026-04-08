@@ -4,7 +4,7 @@ client = docker.from_env()
 
 
 # -----------------------------
-# CHECK CONTAINER EXISTS
+# CHECK CONTAINER EXISTS  
 # -----------------------------
 def maven_container_exists():
     return any(c.name == "maven" for c in client.containers.list(all=True))

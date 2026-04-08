@@ -12,7 +12,7 @@ def auth():
 
 
 # -----------------------------
-# GET CRUMB (MANDATORY)
+# GET CRUMB
 # -----------------------------
 def get_crumb():
     r = requests.get(
