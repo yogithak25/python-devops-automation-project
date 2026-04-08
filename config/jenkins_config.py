@@ -288,7 +288,7 @@ def generate_token():
     # 🔥 USE SESSION 
     # -----------------------------
     session = requests.Session()
-    session.auth = (config["JENKINS_USER"], initial_pwd)
+    session.auth = (config["JENKINS_USER"], config["JENKINS_PASSWORD"])
 
     # -----------------------------
     # STEP 1: GET CRUMB (WITH SESSION)
